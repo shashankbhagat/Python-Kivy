@@ -1,0 +1,129 @@
+
+#:import ListItemButton kivy.uix.listview.ListItemButton
+#:import ListAdapter kivy.adapters.listadapter.ListAdapter
+#:import mainShape mainShape
+
+
+LocationForm:
+
+<LocationForm>:
+	orientation:'vertical'
+	search_input:search_box
+	global_search_result_list:search_result_list
+	ActionBar:
+		ActionView:
+			use_separator:True				
+			ActionPrevious:
+				title:'Weather App'
+				with_previous:False
+			ActionButton:
+				text:'Add Location'
+				on_press:app.root.show_add_location_form()
+			ActionOverflow:
+				ActionButton:
+					text:'Add Location Overflow'
+					on_press:app.root.show_add_location_form()
+		
+	BoxLayout:
+		height:'1cm'
+		size_hint_y:None
+		TextInput:
+			id:search_box
+			size_hint_x:80
+			focus:True
+			multiline:False
+			on_text_validate:root.search_location()
+		Button:
+			text:'Search'
+			size_hint_x:33
+			on_press:root.search_location()
+		Button:
+			text:'Current Location'
+			size_hint_x:33
+			on_press:root.current_location()
+		Button:
+			text:'Shape'
+			size_hint_x:33
+			on_press:root.show_shapes()
+	BoxLayout:
+		height:'4cm'
+		size_hint_y:None
+		
+
+	ListView:
+		id:search_result_list
+		item_strings:[]	#when no adapter is used
+		adapter: 
+			ListAdapter(data=[],cls=mainShape.LocationButton)	#cls - property of adapter and holds values like listitembutton, listitemlabel
+	Button:
+		height:'40dp'
+		size_hint_y:None
+		text:'Cancel'
+		on_press:app.root.show_current_weather(None)
+
+<LocationButton>:
+	on_press: app.root.show_current_weather(self.text)
+
+<ShapeCondition@BoxLayout>:
+	condition:''
+	shapePositionX:0
+	shapePositionY:0
+	shapeSizeX:0
+	shapeSizeY:0
+	orientation:'vertical'
+	
+	Label:
+		text:root.condition
+	
+	BoxLayout:
+		orientation:'vertical'
+		size_hint_y:20
+		Label:
+			text:'test'
+		Slider:
+			id:slidX
+			min:0
+			max:self.width
+			value:2
+		Slider:
+			id:slidY
+			min:0
+			max:1000
+			value:1
+
+	BoxLayout:
+		size_hint_y:70
+		canvas:
+			Color:
+				rgb:[1,0,0]
+			Ellipse:
+				pos:slidX.value,slidY.value	#root.shapePositionX,root.shapePositionY
+				size:[50,75]				#root.shapeSizeX,root.shapeSizeY
+			Color:
+				rgb:[0,1,0]
+			Rectangle:
+				pos:self.width/2,self.center_y
+				size:self.width/2,self.height/2
+			
+
+<CurrentWeather@BoxLayout>:
+	location:""
+	#conditions:None
+	temp:None
+	temp_min:None
+	temp_max:None
+	orientation:'vertical'
+	Label:
+		text:root.location
+	BoxLayout:
+		orientation:'horizontal'
+		size_hint_y:None
+		height:'40dp'
+		Button:
+			text:'Add Location'
+			on_press:app.root.show_add_location_form()
+		Button:
+			text:'Forecast'
+
+
+

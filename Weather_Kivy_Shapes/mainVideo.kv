@@ -1,0 +1,18 @@
+#: import VideoPlayer kivy.uix.videoplayer 
+
+VideoPlayerApp:
+
+
+<VideoPlayerApp>:
+	orientation:'vertical'
+	Label:
+		text:'Video Player'
+		size_hint_y:None
+		height:'2cm'
+	VideoPlayer:		
+		source:'videoplayback.mp4'
+		size_hint_y:'75'
+	Button:
+		size_hint_y:'25'
+		text:'Play Music'
+		on_press:app.root.loadAudio()

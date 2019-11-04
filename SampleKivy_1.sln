@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SampleKivy_1", "SampleKivy_1\SampleKivy_1.pyproj", "{B2F1B0D0-C5C4-484E-A8A4-9C68DC07AD14}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Weather_Kivy_1", "Weather_Kivy_1\Weather_Kivy_1.pyproj", "{3E504A6D-D2B1-4401-8E8E-A5DB9B604421}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Weather_Kivy_Shapes", "Weather_Kivy_Shapes\Weather_Kivy_Shapes.pyproj", "{97E55407-51A4-4E67-B274-617AA3CDBA1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2F1B0D0-C5C4-484E-A8A4-9C68DC07AD14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2F1B0D0-C5C4-484E-A8A4-9C68DC07AD14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E504A6D-D2B1-4401-8E8E-A5DB9B604421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E504A6D-D2B1-4401-8E8E-A5DB9B604421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97E55407-51A4-4E67-B274-617AA3CDBA1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97E55407-51A4-4E67-B274-617AA3CDBA1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3F2ED47-70D7-4B4F-B7D1-C0CEA58D7A66}
+	EndGlobalSection
+EndGlobal
